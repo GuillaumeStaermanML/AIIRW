@@ -10,7 +10,7 @@ Algorithm
 
 The AI-IRW depth belong to the family of data depth. It provides a score in [0,1] reflecting how deep (resp. far) an observation is w.r.t. a probability distribution. When computed on the entire dataset, it provides an ordering of the dataset.
 
-Some parameters have to be set by the user : 
+Some parameters have to be set by the user: 
 
                                     - X: Array of shape (n_samples, n_features): the training set.
                                     
@@ -36,7 +36,7 @@ Some parameters have to be set by the user :
 Quick Start :
 ------------
 
-Create toy training and testing datasets :
+Create toy training and testing datasets:
 
 .. code:: python
 
