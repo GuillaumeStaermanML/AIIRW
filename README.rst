@@ -1,5 +1,8 @@
-# AIIRW
-This repository hosts Python code of the Affine-Invariant Integrated Rank-Weighted depth.
+AI-IRW: Affine-Invariant Integrated Rank-Weighted depth
+=========================================
+
+
+This repository hosts Python code of the Affine-Invariant Integrated Rank-Weighted depth introduced in https://arxiv.org/abs/2106.11068.
 
 
 Quick Start :
@@ -8,9 +11,8 @@ Quick Start :
 Create toy training and testing datasets :
 
 .. code:: python
-  np.random.seed(0)
-  
-  
+
+  np.random.seed(0)  
   n_samples = 1000
   n_samples_test = 1000
   dim = 2
