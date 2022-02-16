@@ -19,16 +19,40 @@ Create toy training and testing datasets :
   mu = np.zeros(dim)
   sigma = np.identity(dim)
   
-  X_train = np.random.multivariate_normal(mu,sigma,n_samples)
-  X_test = np.random.multivariate_normal(mu,sigma,n_samples_test)
+  X_train = np.random.multivariate_normal(mu, sigma, n_samples)
+  X_test = np.random.multivariate_normal(mu, sigma, n_samples_test)
   
   
 And then use AI-IRW to sort the dataset :  
 
 .. code:: python
 
-  score_aiirw = AI_IRW(X,AI=True, robust=True, X_test=Y, n_dirs=1000)
+  score_aiirw = AI_IRW(X, AI=True, robust=True, X_test=Y, n_dirs=1000)
   rank_aiirw = np.argsort(score_aiirw)
   colors = [cm.viridis_r(x) for x in np.linspace(0, 1, n_samples_test) ]
-  plt.scatter(Y[rank_aiirw,0], Y[rank_aiirw,1], s=10, c=colors, cmap='viridis')
+  plt.scatter(Y[rank_aiirw, 0], Y[rank_aiirw, 1], s=10, c=colors, cmap='viridis')
   plt.show()
+
+The sorted simulated dataset, the darker the color, the deeper it is considered in the distribution.
+
+.. image:: Figures/AI-IRW_example.pdf
+
+Dependencies
+------------
+
+These are the dependencies to use FIF:
+
+* numpy 
+* sklearn
+
+Cite
+----
+
+If you use this code in your project, please cite::
+
+  @article{staerman2021affine,
+  title={Affine-Invariant Integrated Rank-Weighted Depth: Definition, Properties and Finite Sample Analysis},
+  author={Staerman, Guillaume and Mozharovskyi, Pavlo and Cl{\'e}men{\c{c}}on, St{\'e}phan},
+  journal={arXiv preprint arXiv:2106.11068},
+  year={2021}
+  }
