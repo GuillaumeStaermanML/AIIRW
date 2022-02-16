@@ -66,7 +66,7 @@ And then use AI-IRW to sort the dataset :
 
 The sorted simulated dataset, the darker the color, the deeper it is considered in the distribution.
 
-.. image:: AI-IRW_example.pdf
+.. image:: AI-IRW_example.png
 
 Dependencies
 ------------
