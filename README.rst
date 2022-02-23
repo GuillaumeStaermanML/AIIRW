@@ -42,6 +42,7 @@ Create toy training and testing datasets:
 
   >>> import numpy as np
   >>> import matplotlib.pyplot as plt
+  >>> from aiirw import AI_IRW
   
   >>> np.random.seed(0)  
   >>> n_samples = 1000
