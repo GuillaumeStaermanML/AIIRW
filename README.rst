@@ -61,7 +61,7 @@ And then use AI-IRW to sort the dataset :
 
   >>> score_aiirw = AI_IRW(X, AI=True, robust=True, X_test=Y, n_dirs=1000)
   >>> rank_aiirw = np.argsort(score_aiirw)
-  >>> colors = [cm.viridis_r(x) for x in np.linspace(0, 1, n_samples_test) ]
+  >>> colors = [cm.viridis_r(x) for x in np.linspace(0, 1, n_samples_test)]
   >>> plt.scatter(Y[rank_aiirw, 0], Y[rank_aiirw, 1], s=10, c=colors, cmap='viridis')
   >>> plt.show()
 
