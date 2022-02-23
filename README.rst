@@ -71,7 +71,7 @@ The sorted simulated dataset, the darker the color, the deeper it is considered 
 Dependencies
 ------------
 
-These are the dependencies to use FIF:
+These are the dependencies to use AI-IRW:
 
 * numpy 
 * sklearn
