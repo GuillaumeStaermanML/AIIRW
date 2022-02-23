@@ -3,6 +3,7 @@ AI-IRW: Affine-Invariant Integrated Rank-Weighted depth
 
 
 This repository hosts Python code of the Affine-Invariant Integrated Rank-Weighted depth introduced in https://arxiv.org/abs/2106.11068.
+If one want the code to be able to reproduce experiments in the paper, send me an email.
 
 
 Algorithm
