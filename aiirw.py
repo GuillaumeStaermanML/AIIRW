@@ -1,5 +1,7 @@
-from utils import standardize, sampled_sphere
 import numpy as np
+
+from utils import standardize, sampled_sphere
+
 
 def AI_IRW(X, AI=True, robust=False, n_dirs=None, X_test=None, random_state=None):
     """ Compute the score of the (Affine-invariant-) integrated rank 
@@ -22,7 +24,7 @@ def AI_IRW(X, AI=True, robust=False, n_dirs=None, X_test=None, random_state=None
     n_dirs: int | None
         The number of random directions needed to approximate 
         the integral over the unit sphere.
-        If None, n_dirs is set as 100* n_features.
+        If None, n_dirs is set as 100 * n_features.
 
     X_test: Array of shape (n_samples_test, n_features)
         The testing set. 
@@ -38,15 +40,11 @@ def AI_IRW(X, AI=True, robust=False, n_dirs=None, X_test=None, random_state=None
         If X_test is None, return the score of the training sample.
     """
     
-
     #Setting seed:
     if random_state is None:
         random_state = 0
 
     np.random.seed(random_state)
-
-
-
 
     if X_test is None:
 
@@ -57,7 +55,8 @@ def AI_IRW(X, AI=True, robust=False, n_dirs=None, X_test=None, random_state=None
 
         n_samples, n_features = X_reduced.shape 
         
-        #Setting the number of directions to 100 times the number of features as in the paper.
+        #Setting the number of directions to 100 times the number of features 
+        # as in the paper.
         if n_dirs is None:
             n_dirs = n_features * 100
 
@@ -89,7 +88,8 @@ def AI_IRW(X, AI=True, robust=False, n_dirs=None, X_test=None, random_state=None
         n_samples, n_features = X_reduced.shape
         n_samples_test, _ = X_test_reduced.shape 
 
-        #Setting the number of directions to 100 times the number of features as in the paper.
+        #Setting the number of directions to 100 times the number of features 
+        # as in the paper.
         if n_dirs is None:
             n_dirs = n_features * 100
 
@@ -99,13 +99,12 @@ def AI_IRW(X, AI=True, robust=False, n_dirs=None, X_test=None, random_state=None
         proj = np.matmul(X_reduced, U.T)
         proj_test = np.matmul(X_test_reduced, U.T)
 
-        sequence = np.arange(1, n_samples_test+1)
+        sequence = np.arange(1, n_samples_test + 1)
         depth = np.zeros((n_samples_test, n_dirs))
-        temp = np.zeros((n_samples_test, n_dirs))
 
         proj.sort(axis=0)
         for k in range(n_dirs):
-            depth[:,k] = np.searchsorted(a=proj[:,k],v=proj_test[:,k], side='left')
+            depth[:,k] = np.searchsorted(a=proj[:,k], v=proj_test[:,k], side='left')
 
         depth /=   n_samples * 1. 
 
